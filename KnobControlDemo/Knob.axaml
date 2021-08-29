@@ -1,0 +1,182 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:c="using:KnobControlDemo">
+  <Design.PreviewWith>
+    <c:Knob Value="1" />
+  </Design.PreviewWith>
+  <Style Selector="c|Knob">
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Canvas Name="Canvas" Classes="canvas">
+          <Ellipse Name="BackgroundEllipse" Classes="background" />
+          <Panel Name="MinusPanel" Classes="minus">
+            <Ellipse Name="MinusEllipse" Classes="minus" />
+            <Viewbox Classes="minus">
+              <Path Classes="minus" />
+            </Viewbox>
+          </Panel>
+          <Panel Name="CursorPanel" Classes="cursor">
+            <Viewbox Classes="cursor">
+              <Path Classes="cursor" />
+            </Viewbox>
+          </Panel>
+          <Panel Name="PlusPanel" Classes="plus">
+            <Ellipse Name="PlusEllipse" Classes="plus" />
+            <Viewbox Classes="plus">
+              <Path Classes="plus" />
+            </Viewbox>
+          </Panel>
+          <Ellipse Name="DigitsEllipse" Classes="digits" />
+          <Border Name="Border1" Classes="digit">
+            <TextBlock Name="Text1" Classes="digit" />
+          </Border>
+          <Border Name="Border2" Classes="digit">
+            <TextBlock Name="Text2" Classes="digit" />
+          </Border>
+          <Border Name="Border3" Classes="digit">
+            <TextBlock Name="Text3" Classes="digit" />
+          </Border>
+          <Border Name="Border4" Classes="digit">
+            <TextBlock Name="Text4" Classes="digit" />
+          </Border>
+          <Border Name="Border5" Classes="digit">
+            <TextBlock Name="Text5" Classes="digit" />
+          </Border>
+          <Border Name="Border6" Classes="digit">
+            <TextBlock Name="Text6" Classes="digit" />
+          </Border>
+          <Border Name="Border7" Classes="digit">
+            <TextBlock Name="Text7" Classes="digit" />
+          </Border>
+          <Border Name="Border8" Classes="digit">
+            <TextBlock Name="Text8" Classes="digit" />
+          </Border>
+          <Border Name="Border9" Classes="digit">
+            <TextBlock Name="Text9" Classes="digit" />
+          </Border>
+          <Ellipse Name="ValueEllipse" Classes="value" />
+          <Border Name="ValueBorder" Classes="value">
+            <TextBlock Name="ValueText" Classes="value" Text="1 V" />
+          </Border>
+        </Canvas>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+  <Style Selector="c|Knob /template/ Canvas.canvas">
+    <Setter Property="Background" Value="Black" />
+    <Setter Property="Width" Value="200" />
+    <Setter Property="Height" Value="200" />
+    <Setter Property="UseLayoutRounding" Value="False" />
+  </Style>
+  <Style Selector="c|Knob /template/ Ellipse.background">
+    <Setter Property="Fill" Value="Transparent" />
+    <Setter Property="Width" Value="150" />
+    <Setter Property="Height" Value="150" />
+    <Setter Property="(Canvas.Left)" Value="25" />
+    <Setter Property="(Canvas.Top)" Value="25" />
+    <Setter Property="IsHitTestVisible" Value="True" />
+  </Style>
+  <Style Selector="c|Knob /template/ Ellipse.digits">
+    <Setter Property="Fill" Value="#2C2C2C" />
+    <Setter Property="Width" Value="100" />
+    <Setter Property="Height" Value="100" />
+    <Setter Property="(Canvas.Left)" Value="50" />
+    <Setter Property="(Canvas.Top)" Value="50" />
+    <Setter Property="IsHitTestVisible" Value="True" />
+  </Style>
+  <Style Selector="c|Knob /template/ Ellipse.value">
+    <Setter Property="Fill" Value="#141414" />
+    <Setter Property="Width" Value="50" />
+    <Setter Property="Height" Value="50" />
+    <Setter Property="(Canvas.Left)" Value="75" />
+    <Setter Property="(Canvas.Top)" Value="75" />
+    <Setter Property="IsHitTestVisible" Value="True" />
+  </Style>
+  <Style Selector="c|Knob /template/ Panel.minus">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="Width" Value="25" />
+    <Setter Property="Height" Value="25" />
+  </Style>
+  <Style Selector="c|Knob /template/ Ellipse.minus">
+    <Setter Property="Fill" Value="#2C2C2C" />
+    <Setter Property="Width" Value="25" />
+    <Setter Property="Height" Value="25" />
+    <Setter Property="IsHitTestVisible" Value="False" />
+  </Style>
+  <Style Selector="c|Knob /template/ Viewbox.minus">
+    <Setter Property="Margin" Value="5" />
+  </Style>
+  <Style Selector="c|Knob /template/ Path.minus">
+    <Setter Property="Fill" Value="#9f9f9f" />
+    <Setter Property="Data" Value="M0 0L5 0L5 1L0 1L0 0Z" />
+  </Style>
+  <Style Selector="c|Knob /template/ Panel.minus:pointerover Path.minus">
+    <Setter Property="Fill" Value="#FFFF00" />
+  </Style>
+  <Style Selector="c|Knob /template/ Panel.plus">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="Width" Value="25" />
+    <Setter Property="Height" Value="25" />
+  </Style>
+  <Style Selector="c|Knob /template/ Ellipse.plus">
+    <Setter Property="Fill" Value="#2C2C2C" />
+    <Setter Property="Width" Value="25" />
+    <Setter Property="Height" Value="25" />
+    <Setter Property="IsHitTestVisible" Value="False" />
+  </Style>
+  <Style Selector="c|Knob /template/ Viewbox.plus">
+    <Setter Property="Margin" Value="5" />
+  </Style>
+  <Style Selector="c|Knob /template/ Path.plus">
+    <Setter Property="Fill" Value="#9f9f9f" />
+    <Setter Property="Data" Value="M3 0L2 0L2 2L0 2L0 3L2 3L2 5L3 5L3 3L5 3L5 2L3 2L3 0Z" />
+  </Style>
+  <Style Selector="c|Knob /template/ Panel.plus:pointerover Path.plus">
+    <Setter Property="Fill" Value="#FFFF00" />
+  </Style>
+  <Style Selector="c|Knob /template/ Panel.cursor">
+    <Setter Property="Width" Value="25" />
+    <Setter Property="Height" Value="25" />
+    <Setter Property="IsHitTestVisible" Value="False" />
+  </Style>
+  <Style Selector="c|Knob /template/ Viewbox.cursor">
+    <Setter Property="Margin" Value="0" />
+  </Style>
+  <Style Selector="c|Knob /template/ Path.cursor">
+    <Setter Property="Fill" Value="#FFFF00" />
+    <Setter Property="IsHitTestVisible" Value="False" />
+    <Setter Property="Data" Value="M0 0L3.5 7L7 0L0 0Z" />
+  </Style>
+  <Style Selector="c|Knob /template/ Border.value">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="Width" Value="50" />
+    <Setter Property="Height" Value="50" />
+    <Setter Property="(Canvas.Left)" Value="75" />
+    <Setter Property="(Canvas.Top)" Value="75" />
+    <Setter Property="IsHitTestVisible" Value="False" />
+  </Style>
+  <Style Selector="c|Knob /template/ TextBlock.value">
+    <Setter Property="HorizontalAlignment" Value="Center" />
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="Foreground" Value="#9f9f9f" />
+    <Setter Property="FontSize" Value="10" />
+    <Setter Property="FontWeight" Value="SemiBold" />
+    <Setter Property="IsHitTestVisible" Value="False" />
+  </Style>
+  <Style Selector="c|Knob /template/ Border.digit">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="Width" Value="25" />
+    <Setter Property="Height" Value="25" />
+  </Style>
+  <Style Selector="c|Knob /template/ TextBlock.digit">
+    <Setter Property="HorizontalAlignment" Value="Center" />
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="Foreground" Value="#9f9f9f" />
+    <Setter Property="FontSize" Value="13" />
+    <Setter Property="FontWeight" Value="SemiBold" />
+    <Setter Property="IsHitTestVisible" Value="False" />
+  </Style>
+  <Style Selector="c|Knob /template/ TextBlock.digit:selected">
+    <Setter Property="Foreground" Value="#FFFF00" />
+  </Style>
+</Styles>

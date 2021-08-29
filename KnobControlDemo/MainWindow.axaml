@@ -1,0 +1,19 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:c="clr-namespace:KnobControlDemo"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="400"
+        x:Class="KnobControlDemo.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Width="600" Height="500"
+        WindowStartupLocation="CenterScreen"
+        Title="KnobControlDemo">
+  <DockPanel HorizontalAlignment="Center" 
+             VerticalAlignment="Center">
+    <TextBox Text="{Binding #Knob.Value}" 
+             Margin="0,10,0,0" 
+             DockPanel.Dock="Bottom"/>
+    <c:Knob Name="Knob" Value="1" />
+  </DockPanel>
+</Window>
