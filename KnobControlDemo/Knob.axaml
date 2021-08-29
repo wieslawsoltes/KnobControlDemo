@@ -7,56 +7,56 @@
   <Style Selector="c|Knob">
     <Setter Property="Template">
       <ControlTemplate>
-        <Canvas Name="Canvas" Classes="canvas">
-          <Ellipse Name="BackgroundEllipse" Classes="background" />
-          <Panel Name="MinusPanel" Classes="minus">
-            <Ellipse Name="MinusEllipse" Classes="minus" />
+        <Canvas Name="PART_Canvas" Classes="canvas">
+          <Ellipse Name="PART_BackgroundEllipse" Classes="background" />
+          <Panel Name="PART_MinusPanel" Classes="minus">
+            <Ellipse Name="PART_MinusEllipse" Classes="minus" />
             <Viewbox Classes="minus">
               <Path Classes="minus" />
             </Viewbox>
           </Panel>
-          <Panel Name="CursorPanel" Classes="cursor">
+          <Panel Name="PART_CursorPanel" Classes="cursor">
             <Viewbox Classes="cursor">
               <Path Classes="cursor" />
             </Viewbox>
           </Panel>
-          <Panel Name="PlusPanel" Classes="plus">
-            <Ellipse Name="PlusEllipse" Classes="plus" />
+          <Panel Name="PART_PlusPanel" Classes="plus">
+            <Ellipse Name="PART_PlusEllipse" Classes="plus" />
             <Viewbox Classes="plus">
               <Path Classes="plus" />
             </Viewbox>
           </Panel>
-          <Ellipse Name="DigitsEllipse" Classes="digits" />
-          <Border Name="Border1" Classes="digit">
-            <TextBlock Name="Text1" Classes="digit" />
+          <Ellipse Name="PART_DigitsEllipse" Classes="digits" />
+          <Border Name="PART_Border1" Classes="digit">
+            <TextBlock Name="PART_Text1" Classes="digit" />
           </Border>
-          <Border Name="Border2" Classes="digit">
-            <TextBlock Name="Text2" Classes="digit" />
+          <Border Name="PART_Border2" Classes="digit">
+            <TextBlock Name="PART_Text2" Classes="digit" />
           </Border>
-          <Border Name="Border3" Classes="digit">
-            <TextBlock Name="Text3" Classes="digit" />
+          <Border Name="PART_Border3" Classes="digit">
+            <TextBlock Name="PART_Text3" Classes="digit" />
           </Border>
-          <Border Name="Border4" Classes="digit">
-            <TextBlock Name="Text4" Classes="digit" />
+          <Border Name="PART_Border4" Classes="digit">
+            <TextBlock Name="PART_Text4" Classes="digit" />
           </Border>
-          <Border Name="Border5" Classes="digit">
-            <TextBlock Name="Text5" Classes="digit" />
+          <Border Name="PART_Border5" Classes="digit">
+            <TextBlock Name="PART_Text5" Classes="digit" />
           </Border>
-          <Border Name="Border6" Classes="digit">
-            <TextBlock Name="Text6" Classes="digit" />
+          <Border Name="PART_Border6" Classes="digit">
+            <TextBlock Name="PART_Text6" Classes="digit" />
           </Border>
-          <Border Name="Border7" Classes="digit">
-            <TextBlock Name="Text7" Classes="digit" />
+          <Border Name="PART_Border7" Classes="digit">
+            <TextBlock Name="PART_Text7" Classes="digit" />
           </Border>
-          <Border Name="Border8" Classes="digit">
-            <TextBlock Name="Text8" Classes="digit" />
+          <Border Name="PART_Border8" Classes="digit">
+            <TextBlock Name="PART_Text8" Classes="digit" />
           </Border>
-          <Border Name="Border9" Classes="digit">
-            <TextBlock Name="Text9" Classes="digit" />
+          <Border Name="PART_Border9" Classes="digit">
+            <TextBlock Name="PART_Text9" Classes="digit" />
           </Border>
-          <Ellipse Name="ValueEllipse" Classes="value" />
-          <Border Name="ValueBorder" Classes="value">
-            <TextBlock Name="ValueText" Classes="value" Text="1 V" />
+          <Ellipse Name="PART_ValueEllipse" Classes="value" />
+          <Border Name="PART_ValueBorder" Classes="value">
+            <TextBlock Name="PART_ValueText" Classes="value" Text="1 V" />
           </Border>
         </Canvas>
       </ControlTemplate>

@@ -82,15 +82,15 @@ namespace KnobControlDemo
             _valueUnit = "V";
             digits = new()
             {
-                new Digit("Border1", "Text1", 9.0, false),
-                new Digit("Border2", "Text2", 1.0, false),
-                new Digit("Border3", "Text3", 2.0, false),
-                new Digit("Border4", "Text4", 3.0, false),
-                new Digit("Border5", "Text5", 4.0, false),
-                new Digit("Border6", "Text6", 5.0, false),
-                new Digit("Border7", "Text7", 6.0, false),
-                new Digit("Border8", "Text8", 7.0, false),
-                new Digit("Border9", "Text9", 8.0, false),
+                new Digit("PART_Border1", "PART_Text1", 9.0, false),
+                new Digit("PART_Border2", "PART_Text2", 1.0, false),
+                new Digit("PART_Border3", "PART_Text3", 2.0, false),
+                new Digit("PART_Border4", "PART_Text4", 3.0, false),
+                new Digit("PART_Border5", "PART_Text5", 4.0, false),
+                new Digit("PART_Border6", "PART_Text6", 5.0, false),
+                new Digit("PART_Border7", "PART_Text7", 6.0, false),
+                new Digit("PART_Border8", "PART_Text8", 7.0, false),
+                new Digit("PART_Border9", "PART_Text9", 8.0, false),
             };
         }
 
@@ -115,24 +115,34 @@ namespace KnobControlDemo
         {
             base.OnApplyTemplate(e);
 
-            _canvas = e.NameScope.Find<Canvas>("Canvas");
-            _backgroundEllipse = e.NameScope.Find<Ellipse>("BackgroundEllipse");
-            _digitsEllipse = e.NameScope.Find<Ellipse>("DigitsEllipse");
-            _valueEllipse = e.NameScope.Find<Ellipse>("ValueEllipse");
-            _valueBorder = e.NameScope.Find<Border>("ValueBorder");
-            _valueText = e.NameScope.Find<TextBlock>("ValueText");
-            _minusPanel = e.NameScope.Find<Panel>("MinusPanel");
-            _plusPanel = e.NameScope.Find<Panel>("PlusPanel");
-            _cursorPanel = e.NameScope.Find<Panel>("CursorPanel");
+            _canvas = e.NameScope.Find<Canvas>("PART_Canvas");
+            _backgroundEllipse = e.NameScope.Find<Ellipse>("PART_BackgroundEllipse");
+            _digitsEllipse = e.NameScope.Find<Ellipse>("PART_DigitsEllipse");
+            _valueEllipse = e.NameScope.Find<Ellipse>("PART_ValueEllipse");
+            _valueBorder = e.NameScope.Find<Border>("PART_ValueBorder");
+            _valueText = e.NameScope.Find<TextBlock>("PART_ValueText");
+            _minusPanel = e.NameScope.Find<Panel>("PART_MinusPanel");
+            _plusPanel = e.NameScope.Find<Panel>("PART_PlusPanel");
+            _cursorPanel = e.NameScope.Find<Panel>("PART_CursorPanel");
 
-            _backgroundEllipse.AddHandler(PointerPressedEvent, BackgroundEllipse_PointerPressed, RoutingStrategies.Tunnel | RoutingStrategies.Direct);
-            _backgroundEllipse.AddHandler(PointerReleasedEvent, BackgroundEllipse_PointerReleased, RoutingStrategies.Tunnel | RoutingStrategies.Direct);
-            _backgroundEllipse.AddHandler(PointerMovedEvent, BackgroundEllipse_PointerMoved, RoutingStrategies.Tunnel | RoutingStrategies.Direct);
-            _minusPanel.PointerPressed += (_, _) => Minus();
-            _plusPanel.PointerPressed += (_, _) => Plus();
+            if (_backgroundEllipse is { })
+            {
+                _backgroundEllipse.AddHandler(PointerPressedEvent, BackgroundEllipse_PointerPressed, RoutingStrategies.Tunnel | RoutingStrategies.Direct);
+                _backgroundEllipse.AddHandler(PointerReleasedEvent, BackgroundEllipse_PointerReleased, RoutingStrategies.Tunnel | RoutingStrategies.Direct);
+                _backgroundEllipse.AddHandler(PointerMovedEvent, BackgroundEllipse_PointerMoved, RoutingStrategies.Tunnel | RoutingStrategies.Direct);
+            }
+
+            if (_minusPanel is { })
+            {
+                _minusPanel.PointerPressed += (_, _) => Minus();
+            }
+
+            if (_plusPanel is { })
+            {
+                _plusPanel.PointerPressed += (_, _) => Plus();
+            }
 
             InitializeDigits(e.NameScope);
-
             InvalidateDigits();
             Invalidate(Value);
         }
